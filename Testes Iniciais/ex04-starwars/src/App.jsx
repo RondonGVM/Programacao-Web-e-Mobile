@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Cabecalho } from "./components/Cabecalho";
+import { Cabecalho } from "../../aba-react/src/components/Cabecalho";
+
 
 const urlStarWars = "https://swapi.dev/api/people/?page=1";
 
@@ -7,6 +8,7 @@ function App() {
   const [personagens, setPersonagens] = useState([]);
   const [previous, setPrevious] = useState(null);
   const [next, setNext] = useState(null);
+
   async function carregar(url) {
     try {
       const response = await fetch(url);
@@ -35,6 +37,7 @@ function App() {
   function handleBtNextClick() {
     carregar(next);
   }
+
   return (
     <>
       <Cabecalho/>
